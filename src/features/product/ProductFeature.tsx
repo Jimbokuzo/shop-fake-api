@@ -4,7 +4,7 @@ import { useDataProduct } from "./hooks";
 import { UpdataProductPopup } from "./components/UpdateProductPopup";
 
 export const ProductFeature = () => {
-  const { body } = useDataProduct();
+  const { description } = useDataProduct();
 
   return (
     <div
@@ -44,7 +44,7 @@ export const ProductFeature = () => {
             align-items: center;
           `}
         >
-          {body}
+          {description}
         </p>
       </div>
       <div

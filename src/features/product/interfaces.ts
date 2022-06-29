@@ -1,8 +1,13 @@
 export interface ProductInterface {
   id: number;
   title: string;
-  body: string;
-  userId: number;
-  tags: string[];
-  reactions: number;
+  description: string;
+  price: number;
+  discountPercentage: number;
+  rating: number;
+  stock: number;
+  brand: string;
+  category: string;
+  thumbnail: string;
+  images: string[];
 }

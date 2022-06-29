@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 interface fields {
-  title: string;
+  description: string;
 }
 
 export const initialErrors = {
-  title: false,
+  description: false,
 };
 
 export const useUpdateProduct = (handleClose: () => void) => {
@@ -19,12 +19,12 @@ export const useUpdateProduct = (handleClose: () => void) => {
 
     const newErrors = { ...initialErrors };
 
-    if (fields.title.length < 5) {
-      newErrors.title = true;
+    if (fields.description.length < 5) {
+      newErrors.description = true;
       isValid = false;
     }
-    if (fields.title.length > 20) {
-      newErrors.title = true;
+    if (fields.description.length > 20) {
+      newErrors.description = true;
       isValid = false;
     }
 
@@ -36,16 +36,16 @@ export const useUpdateProduct = (handleClose: () => void) => {
     event.preventDefault();
 
     const dataSend = {
-      title: event.target.title.value,
+      description: event.target.description.value,
     };
 
     if (!validate(dataSend)) return;
 
-    fetch("https://dummyjson.com/posts/1", {
+    fetch("https://dummyjson.com/products/1", {
       method: "PUT" /* or PATCH */,
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        title: "I think I should shift to the moon",
+        title: "iPhone Galaxy +1",
       }),
     })
       .then((res) => res.json())

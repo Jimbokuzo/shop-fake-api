@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import { ProductInterface } from "../interfaces";
 import { ProductItem } from "./ProductItem";
 
@@ -6,7 +8,14 @@ interface Props {
 }
 
 export const ProductList = ({ products }: Props) => (
-  <div>
+  <div
+    css={css`
+      max-width: 900px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    `}
+  >
     {products.map((product) => (
       <ProductItem key={product.id} product={product} />
     ))}

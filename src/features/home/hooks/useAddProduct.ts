@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 interface fields {
-  tags: string[];
   title: string;
+  description: string;
 }
 
 export const initialErrors = {
-  tags: false,
   title: false,
+  description: false,
 };
 
 export const useAddProduct = (handleClose: () => void) => {
@@ -21,8 +21,8 @@ export const useAddProduct = (handleClose: () => void) => {
 
     const newErrors = { ...initialErrors };
 
-    if (fields.tags.length < 2) {
-      newErrors.tags = true;
+    if (fields.description.length < 2) {
+      newErrors.description = true;
       isValid = false;
     }
     if (fields.title.length < 5) {
@@ -42,16 +42,16 @@ export const useAddProduct = (handleClose: () => void) => {
     event.preventDefault();
 
     const dataSend = {
-      tags: event.target.tags.value,
+      description: event.target.description.value,
       title: event.target.title.value,
     };
 
     if (!validate(dataSend)) return;
 
-    fetch("https://dummyjson.com/posts/add", {
+    fetch("https://dummyjson.com/products/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(dataSend),
+      body: JSON.stringify({}),
     })
       .then((res) => res.json())
       .then((data) => {

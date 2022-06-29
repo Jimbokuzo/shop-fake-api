@@ -7,9 +7,8 @@ export const ProductSkeleton = () => {
   return (
     <div
       css={css`
+        max-width: 800px;
         display: flex;
-        flex-direction: column;
-        gap: 30px;
         justify-content: space-between;
       `}
     >

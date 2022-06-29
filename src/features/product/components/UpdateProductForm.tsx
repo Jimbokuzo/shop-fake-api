@@ -23,9 +23,9 @@ export const UpdateProductForm = ({ handleClose }: Props) => {
       `}
     >
       <TextField
-        error={errors.title}
-        name="title"
-        label="Title"
+        error={errors.description}
+        name="description"
+        label="Description"
         variant="outlined"
       />
       <Button

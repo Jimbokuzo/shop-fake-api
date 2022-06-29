@@ -23,15 +23,15 @@ export const AddProductForm = ({ handleClose }: Props) => {
       `}
     >
       <TextField
-        error={errors.tags}
-        name="tags"
-        label="Tags"
-        variant="standard"
-      />
-      <TextField
         error={errors.title}
         name="title"
         label="Title"
+        variant="standard"
+      />
+      <TextField
+        error={errors.description}
+        name="description"
+        label="Description"
         variant="standard"
       />
       <Button

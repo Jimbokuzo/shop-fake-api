@@ -7,7 +7,7 @@ export const useDataProduct = () => {
   const [product, setProduct] = useState({} as ProductInterface);
 
   useEffect(() => {
-    fetch(`https://dummyjson.com/posts/${productId}`)
+    fetch(`https://dummyjson.com/products/${productId}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

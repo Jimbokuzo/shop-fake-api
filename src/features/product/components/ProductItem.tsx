@@ -7,7 +7,18 @@ interface Props {
 }
 
 export const ProductItem = ({
-  product: { id, body, tags, reactions },
+  product: {
+    id,
+    brand,
+    category,
+    description,
+    discountPercentage,
+    thumbnail,
+    price,
+    rating,
+    stock,
+    title,
+  },
 }: Props) => (
   <div
     css={css`
@@ -18,6 +29,13 @@ export const ProductItem = ({
       margin-bottom: 20px;
     `}
   >
+    <div>{brand}</div>
+    <div>{category}</div>
+    <div>{discountPercentage}</div>
+    <div>{id}</div>
+    <div>{thumbnail}</div>
+    <div>{price}</div>
+    <div>{stock}</div>
     <div
       css={css`
         width: 100%;
@@ -39,7 +57,7 @@ export const ProductItem = ({
           font-family: Arial, Helvetica, sans-serif;
         `}
       >
-        {tags}
+        {title}
       </h3>
       <p
         css={css`
@@ -53,7 +71,7 @@ export const ProductItem = ({
           font-family: Arial, Helvetica, sans-serif;
         `}
       >
-        {reactions}
+        {rating}
       </p>
     </div>
     <div
@@ -72,7 +90,7 @@ export const ProductItem = ({
           font-family: Arial, Helvetica, sans-serif;
         `}
       >
-        {body}
+        {description}
       </p>
     </div>
   </div>
