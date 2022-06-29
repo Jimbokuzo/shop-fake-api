@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { PostInterface } from "../interfaces";
+import { ProductInterface } from "../interfaces";
 
-export const useDataPosts = () => {
-  const [posts, setPosts] = useState([] as PostInterface[]);
+export const useDataProducts = () => {
+  const [products, setProducts] = useState([] as ProductInterface[]);
   const [isLoading, setIsLoading] = useState(true);
 
   const [pagination, setPagination] = useState({
@@ -11,7 +11,7 @@ export const useDataPosts = () => {
     page: 1,
   });
 
-  const LIMIT_POSTS = 10;
+  const LIMIT_PRODUCTS = 10;
 
   const OnChangePagination = (e: any, value: number) => {
     setPagination({ ...pagination, page: value });
@@ -25,13 +25,13 @@ export const useDataPosts = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        setPosts(data.posts);
+        setProducts(data.posts);
         setIsLoading(false);
       });
   }, [pagination.page]);
 
   return {
-    posts,
+    products,
     isLoading,
     pagination,
     OnChangePagination,

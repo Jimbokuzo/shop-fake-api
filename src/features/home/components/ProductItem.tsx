@@ -1,13 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { PostInterface } from "../interfaces";
+import { ProductInterface } from "../interfaces";
 import { Link } from "react-router-dom";
 
 interface Props {
-  post: PostInterface;
+  product: ProductInterface;
 }
 
-export const PostItem = ({ post: { id, title, tags, reactions } }: Props) => (
+export const ProductItem = ({
+  product: { id, title, tags, reactions },
+}: Props) => (
   <Link
     css={css`
       font-family: Arial, Helvetica, sans-serif;

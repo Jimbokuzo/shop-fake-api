@@ -1,16 +1,14 @@
 import { useState } from "react";
 
 interface fields {
-  tags: string[];
   title: string;
 }
 
 export const initialErrors = {
-  tags: false,
   title: false,
 };
 
-export const useAddPost = (handleClose: () => void) => {
+export const useUpdateProduct = (handleClose: () => void) => {
   const [errors, setErrors] = useState(initialErrors);
 
   const resetErrors = () => setErrors(initialErrors);
@@ -21,10 +19,6 @@ export const useAddPost = (handleClose: () => void) => {
 
     const newErrors = { ...initialErrors };
 
-    if (fields.tags.length < 2) {
-      newErrors.tags = true;
-      isValid = false;
-    }
     if (fields.title.length < 5) {
       newErrors.title = true;
       isValid = false;
@@ -38,20 +32,21 @@ export const useAddPost = (handleClose: () => void) => {
     return isValid;
   };
 
-  const onSubmitAddPost = (event: any) => {
+  const onSubmitAddProduct = (event: any) => {
     event.preventDefault();
 
     const dataSend = {
-      tags: event.target.tags.value,
       title: event.target.title.value,
     };
 
     if (!validate(dataSend)) return;
 
-    fetch("https://dummyjson.com/posts/add", {
-      method: "POST",
+    fetch("https://dummyjson.com/posts/1", {
+      method: "PUT" /* or PATCH */,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(dataSend),
+      body: JSON.stringify({
+        title: "I think I should shift to the moon",
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -60,7 +55,7 @@ export const useAddPost = (handleClose: () => void) => {
   };
 
   return {
-    onSubmitAddPost,
+    onSubmitAddProduct,
     errors,
   };
 };

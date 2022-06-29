@@ -1,4 +1,4 @@
-export interface PostInterface {
+export interface ProductInterface {
   id: number;
   title: string;
   tags: string[];

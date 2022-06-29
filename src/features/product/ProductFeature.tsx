@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useDataPost } from "./hooks";
-import { UpdataPostPopup } from "./components/UpdatePostPopup";
+import { useDataProduct } from "./hooks";
+import { UpdataProductPopup } from "./components/UpdateProductPopup";
 
-export const PostFeature = () => {
-  const { body } = useDataPost();
+export const ProductFeature = () => {
+  const { body } = useDataProduct();
 
   return (
     <div
@@ -55,7 +55,7 @@ export const PostFeature = () => {
           margin-bottom: 30px;
         `}
       >
-        <UpdataPostPopup />
+        <UpdataProductPopup />
       </div>
     </div>
   );

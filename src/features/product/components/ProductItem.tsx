@@ -1,12 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { PostInterface } from "../interfaces";
+import { ProductInterface } from "../interfaces";
 
 interface Props {
-  post: PostInterface;
+  product: ProductInterface;
 }
 
-export const PostItem = ({ post: { id, body, tags, reactions } }: Props) => (
+export const ProductItem = ({
+  product: { id, body, tags, reactions },
+}: Props) => (
   <div
     css={css`
       max-width: 800px;

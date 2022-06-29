@@ -5,12 +5,12 @@ import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
-import AddIcon from "@mui/icons-material/Add";
-import { AddPostForm } from "./AddPostForm";
+import BrowserUpdatedOutlinedIcon from "@mui/icons-material/BrowserUpdatedOutlined";
+import { UpdateProductForm } from "./UpdateProductForm";
 
 interface Props {}
 
-export const AddPostPopup = (props: Props) => {
+export const UpdataProductPopup = (props: Props) => {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -32,9 +32,9 @@ export const AddPostPopup = (props: Props) => {
         `}
         variant="contained"
         onClick={handleClickOpen}
-        endIcon={<AddIcon />}
+        endIcon={<BrowserUpdatedOutlinedIcon />}
       >
-        Add post
+        Updata product
       </Button>
       <Dialog
         open={open}
@@ -53,10 +53,10 @@ export const AddPostPopup = (props: Props) => {
             cursor: default;
           `}
         >
-          Add post
+          Update product
         </DialogTitle>
         <DialogContent>
-          <AddPostForm handleClose={handleClose} />
+          <UpdateProductForm handleClose={handleClose} />
         </DialogContent>
       </Dialog>
     </div>

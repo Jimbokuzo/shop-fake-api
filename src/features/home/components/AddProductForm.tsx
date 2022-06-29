@@ -1,18 +1,18 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Button, TextField } from "@mui/material";
-import { useAddPost } from "../hooks";
+import { useAddProduct } from "../hooks";
 
 interface Props {
   handleClose: () => void;
 }
 
-export const AddPostForm = ({ handleClose }: Props) => {
-  const { onSubmitAddPost, errors } = useAddPost(handleClose);
+export const AddProductForm = ({ handleClose }: Props) => {
+  const { onSubmitAddProduct, errors } = useAddProduct(handleClose);
 
   return (
     <form
-      onSubmit={onSubmitAddPost}
+      onSubmit={onSubmitAddProduct}
       css={css`
         height: 200px;
         display: flex;

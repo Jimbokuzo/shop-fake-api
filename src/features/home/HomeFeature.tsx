@@ -1,11 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useDataPosts } from "./hooks";
-import { PostList, PostSkeleton, AddPostPopup } from "./components";
+import { useDataProducts } from "./hooks";
+import { ProductList, ProductSkeleton, AddProductPopup } from "./components";
 import { Pagination } from "./components/Pagination";
 
 export const HomeFeature = () => {
-  const { posts, isLoading, OnChangePagination, pagination } = useDataPosts();
+  const { products, isLoading, OnChangePagination, pagination } =
+    useDataProducts();
 
   return (
     <div>
@@ -17,9 +18,9 @@ export const HomeFeature = () => {
           margin-bottom: 30px;
         `}
       >
-        <AddPostPopup />
+        <AddProductPopup />
       </div>
-      {isLoading ? <PostSkeleton /> : <PostList posts={posts} />}
+      {isLoading ? <ProductSkeleton /> : <ProductList products={products} />}
       <div
         css={css`
           width: 100%;
