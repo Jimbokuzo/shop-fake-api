@@ -10,10 +10,9 @@ interface Props {
 export const ProductList = ({ products }: Props) => (
   <div
     css={css`
-      max-width: 900px;
       display: flex;
       flex-wrap: wrap;
-      gap: 40px;
+      justify-content: space-between;
     `}
   >
     {products.map((product) => (

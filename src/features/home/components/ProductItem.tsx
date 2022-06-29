@@ -17,45 +17,42 @@ export const ProductItem = ({
       color: black;
       cursor: default;
     `}
-    to={`/post/${id}`}
+    to={`/product/${id}`}
   >
     <div
       css={css`
-        width: 300px;
-        min-height: 320px;
-        background: #ecd8b2;
+        width: 230px;
+        background: #e9e9e9;
         border-radius: 5px;
-        padding: 10px;
-        box-shadow: 0 0 10px #707070;
+        padding: 10px 0 10px 0;
         margin-bottom: 20px;
+        box-shadow: 0 0 5px #707070;
+        transition: 0.5s;
+        :hover {
+          background: #ffffff;
+          transform: scale(1.1);
+          box-shadow: 0 0 10px #707070;
+          transition: 0.5s;
+        }
       `}
     >
-      {" "}
       <div
         css={css`
           width: 100%;
-          height: 15px;
+          padding: 0 5px 0 5px;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          margin-bottom: 10px;
         `}
       >
-        <div
+        <p
           css={css`
+            padding: 5px;
             cursor: text;
           `}
         >
-          <b
-            css={css`
-              padding: 5px;
-              margin-right: 15px;
-              margin-bottom: 15px;
-            `}
-          >
-            {title}
-          </b>
-        </div>
+          {title}
+        </p>
         <p
           css={css`
             display: flex;
@@ -64,7 +61,7 @@ export const ProductItem = ({
             background: #202020;
             width: 45px;
             height: 25px;
-            border-radius: 15px;
+            border-radius: 5px;
             color: white;
             cursor: default;
             font-family: Arial, Helvetica, sans-serif;
@@ -76,7 +73,7 @@ export const ProductItem = ({
       <div>
         <img
           css={css`
-            width: 280px;
+            width: 100%;
           `}
           src={thumbnail}
         />
