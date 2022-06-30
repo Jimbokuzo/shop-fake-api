@@ -7,7 +7,7 @@ export const ProductSkeleton = () => {
   return (
     <div
       css={css`
-        max-width: 800px;
+        max-width: 1024px;
         display: flex;
         justify-content: space-between;
       `}

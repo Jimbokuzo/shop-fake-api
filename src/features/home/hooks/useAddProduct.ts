@@ -21,15 +21,11 @@ export const useAddProduct = (handleClose: () => void) => {
 
     const newErrors = { ...initialErrors };
 
-    if (fields.description.length < 2) {
+    if (!/^[0-9a-zA-Z]{2,100}$/.test(fields.description)) {
       newErrors.description = true;
       isValid = false;
     }
-    if (fields.title.length < 5) {
-      newErrors.title = true;
-      isValid = false;
-    }
-    if (fields.title.length > 20) {
+    if (!/^[0-9a-zA-Z]{5,10}$/.test(fields.title)) {
       newErrors.title = true;
       isValid = false;
     }

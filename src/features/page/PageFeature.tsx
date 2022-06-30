@@ -10,7 +10,7 @@ export const PageFeature = ({ children }: any) => (
   >
     <div
       css={css`
-        max-width: 800px;
+        max-width: 1024px;
         margin: auto;
         padding: 15px;
         margin-top: 80px;

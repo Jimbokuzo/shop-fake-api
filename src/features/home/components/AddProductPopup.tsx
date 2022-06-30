@@ -25,16 +25,22 @@ export const AddProductPopup = (props: Props) => {
     <div>
       <Button
         css={css`
-          background: black;
+          color: black;
+          width: 200px;
+          height: 40px;
+          font-size: 20px;
+          transition: 0.3s;
           :hover {
-            background: #333333;
+            transform: scale(1.1);
+            transition: 0.3s;
+            text-shadow: 0 0 5px black;
           }
         `}
-        variant="contained"
+        variant="text"
         onClick={handleClickOpen}
         endIcon={<AddIcon />}
       >
-        Add product
+        Add
       </Button>
       <Dialog
         open={open}

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { MenuNavigation } from "./components";
+import { Cart, MenuNavigation } from "./components";
 
 export const HeaderFeature = () => (
   <header
@@ -14,11 +14,15 @@ export const HeaderFeature = () => (
   >
     <div
       css={css`
-        max-width: 800px;
+        max-width: 1024px;
         margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
       `}
     >
       <MenuNavigation />
+      <Cart />
     </div>
   </header>
 );

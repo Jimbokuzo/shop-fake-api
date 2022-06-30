@@ -6,12 +6,12 @@ export const useDataProducts = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const [pagination, setPagination] = useState({
-    limit: 9,
-    total: 10,
+    limit: 12,
+    total: 9,
     page: 1,
   });
 
-  const LIMIT_PRODUCTS = 9;
+  const LIMIT_PRODUCTS = 12;
 
   const OnChangePagination = (e: any, value: number) => {
     setPagination({ ...pagination, page: value });

@@ -7,9 +7,9 @@ export const MenuNavigation = () => (
   <ul
     css={css`
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       align-items: center;
-      width: 100%;
+      width: 70%;
       height: 50px;
     `}
   >
