@@ -14,7 +14,7 @@ export const UpdateProductForm = ({ handleClose }: Props) => {
     <form
       onSubmit={onSubmitAddProduct}
       css={css`
-        height: 150px;
+        height: 400px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -23,10 +23,35 @@ export const UpdateProductForm = ({ handleClose }: Props) => {
       `}
     >
       <TextField
+        error={errors.title}
+        name="title"
+        label="Title"
+        variant="standard"
+      />
+      <TextField
+        error={errors.brand}
+        name="brand"
+        label="Brand"
+        variant="standard"
+      />
+      <TextField
+        error={errors.category}
+        name="category"
+        label="Category"
+        variant="standard"
+      />
+
+      <TextField
+        error={errors.price}
+        name="price"
+        label="Price"
+        variant="standard"
+      />
+      <TextField
         error={errors.description}
         name="description"
         label="Description"
-        variant="outlined"
+        variant="standard"
       />
       <Button
         css={css`

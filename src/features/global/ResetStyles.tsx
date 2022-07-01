@@ -5,6 +5,7 @@ export const ResetStyles = () => (
     styles={css`
       * {
         box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
       }
       li {
         list-style: none;

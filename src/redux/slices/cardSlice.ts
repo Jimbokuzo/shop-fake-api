@@ -10,10 +10,12 @@ export interface ProductCartInterfese {
 }
 
 interface CardStateInterfese {
+  total: number;
   products: ProductCartInterfese[];
 }
 
 const initialState: CardStateInterfese = {
+  total: 0,
   products: [],
 };
 
@@ -35,20 +37,26 @@ export const cardSlice = createSlice({
         state.products[productIndex] = {
           ...product,
           count: product.count ? product.count + 1 : 0,
+          price: product.price + product.price,
         };
+        state.total = state.total + 1;
 
         return state;
       }
 
       action.payload.count = 1;
 
-      return { ...state, products: [...state.products, action.payload] };
+      return {
+        ...state,
+        products: [...state.products, action.payload],
+        total: state.total + 1,
+      };
     },
   },
 });
 
 export const { setProducts, addProducts } = cardSlice.actions;
 
-export const selectProducts = (state: RootState) => state.card.products;
+export const selectCart = (state: RootState) => state.card;
 
 export default cardSlice.reducer;

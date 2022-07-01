@@ -1,10 +1,18 @@
 import { useState } from "react";
 
 interface fields {
+  title: string;
+  brand: string;
+  category: string;
+  price: string;
   description: string;
 }
 
 export const initialErrors = {
+  title: false,
+  brand: false,
+  category: false,
+  price: false,
   description: false,
 };
 
@@ -18,12 +26,23 @@ export const useUpdateProduct = (handleClose: () => void) => {
     resetErrors();
 
     const newErrors = { ...initialErrors };
-
-    if (fields.description.length < 5) {
-      newErrors.description = true;
+    if (fields.title.length < 3) {
+      newErrors.title = true;
       isValid = false;
     }
-    if (fields.description.length > 20) {
+    if (fields.price.length < 3) {
+      newErrors.price = true;
+      isValid = false;
+    }
+    if (fields.brand.length < 1) {
+      newErrors.brand = true;
+      isValid = false;
+    }
+    if (fields.category.length < 3) {
+      newErrors.category = true;
+      isValid = false;
+    }
+    if (fields.description.length < 3) {
       newErrors.description = true;
       isValid = false;
     }
@@ -36,6 +55,10 @@ export const useUpdateProduct = (handleClose: () => void) => {
     event.preventDefault();
 
     const dataSend = {
+      title: event.target.title.value,
+      brand: event.target.brand.value,
+      category: event.target.category.value,
+      price: event.target.price.value,
       description: event.target.description.value,
     };
 

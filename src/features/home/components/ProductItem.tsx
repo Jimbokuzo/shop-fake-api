@@ -61,11 +61,7 @@ export const ProductItem = ({ product, onAddProduct }: Props) => {
               display: flex;
               align-items: center;
               justify-content: center;
-              background: #202020;
-              width: 45px;
-              height: 25px;
-              border-radius: 5px;
-              color: white;
+              color: black;
               cursor: default;
             `}
           >
@@ -148,6 +144,7 @@ export const ProductItem = ({ product, onAddProduct }: Props) => {
             border-radius: 5px;
             border: none;
             font-size: 18px;
+            background: none;
             :hover {
               background: #bbbbbb;
             }

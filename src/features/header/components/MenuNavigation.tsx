@@ -9,7 +9,7 @@ export const MenuNavigation = () => (
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 70%;
+      width: 30%;
       height: 50px;
     `}
   >

@@ -10,6 +10,7 @@ export const MenuNavItem = ({ item: { id, name, url } }: Props) => (
   <li
     css={css`
       display: block;
+      margin-left: 15px;
     `}
     key={id}
   >

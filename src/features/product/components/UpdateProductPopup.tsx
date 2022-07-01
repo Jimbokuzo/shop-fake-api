@@ -1,11 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { useState } from "react";
-import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
-import BrowserUpdatedOutlinedIcon from "@mui/icons-material/BrowserUpdatedOutlined";
+import EditIcon from "@mui/icons-material/Edit";
 import { UpdateProductForm } from "./UpdateProductForm";
 
 interface Props {}
@@ -23,19 +22,17 @@ export const UpdataProductPopup = (props: Props) => {
 
   return (
     <div>
-      <Button
+      <button
         css={css`
-          background: black;
-          :hover {
-            background: #333333;
-          }
+          width: 27px;
+          background: white;
+          color: black;
+          border: none;
         `}
-        variant="contained"
         onClick={handleClickOpen}
-        endIcon={<BrowserUpdatedOutlinedIcon />}
       >
-        Updata product
-      </Button>
+        <EditIcon />
+      </button>
       <Dialog
         open={open}
         keepMounted

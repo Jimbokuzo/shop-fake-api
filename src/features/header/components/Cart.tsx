@@ -5,7 +5,8 @@ import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import React from "react";
 import Menu from "@material-ui/core/Menu";
 import { useAppSelector } from "../../../redux/hooks";
-import { selectProducts } from "../../../redux/slices/cardSlice";
+import { selectCart } from "../../../redux/slices/cardSlice";
+import { Badge } from "@mui/material";
 
 export const Cart = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -18,24 +19,38 @@ export const Cart = () => {
     setAnchorEl(null);
   };
 
-  const products = useAppSelector(selectProducts);
+  const { products, total } = useAppSelector(selectCart);
 
   return (
     <div>
       <div>
-        <IconButton
-          aria-controls="simple-menu"
-          aria-haspopup="true"
-          onClick={handleClick}
-          aria-label="upload picture"
-          component="span"
+        <Badge
+          css={css`
+            color: black;
+            padding-right: 7px;
+            .css-144dnr3-MuiBadge-badge {
+              background: #d4d4d4;
+              margin-top: 2px;
+            }
+          `}
+          badgeContent={total}
+          overlap="circular"
         >
-          <ShoppingBasketIcon
-            css={css`
-              color: white;
-            `}
-          />
-        </IconButton>
+          <IconButton
+            aria-controls="simple-menu"
+            aria-haspopup="true"
+            onClick={handleClick}
+            aria-label="upload picture"
+            component="span"
+          >
+            <ShoppingBasketIcon
+              css={css`
+                font-size: 26px;
+                color: white;
+              `}
+            />
+          </IconButton>
+        </Badge>
       </div>
 
       <Menu
